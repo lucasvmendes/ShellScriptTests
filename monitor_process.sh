@@ -7,4 +7,4 @@ do
     esac
 done
 
-(crontab -l; echo "*/2 * * * * /bin/ps aux >> /home/lucasvarisco/$arquivo") | crontab
+(crontab -l; echo "*/15 * * * * /bin/ps aux >> /home/lucasvarisco/$arquivo") | crontab
