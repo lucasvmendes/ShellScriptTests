@@ -3,7 +3,7 @@
 while getopts "f:" OPTION
 do
         case $OPTION in
-                f) arquivo=$OPTARG;;
+                f) filename=$OPTARG;;
         esac
 done
 
@@ -13,7 +13,7 @@ while read LINHA; do
 	SENHA=$(echo $LINHA | awk '{print $2}')
 	GRUPO=$(echo $LINHA | awk '{print $3}')
 	useradd -m -d /home/$USUARIO $USUARIO -p $(openssl passwd -1 $SENHA) -s /bin/bash -g $GRUPO
-done < "$arquivo"
+done < "$filename"
 echo "Lista de usuários carregada."
 
 while [ "$opcao" != "5" ]; do
